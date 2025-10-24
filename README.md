@@ -41,7 +41,7 @@ Replay & target‑network toggles define eight scenarios:
 2. **TIOLI, no replay** (symmetric)  
 3. **Bidding + replay** (symmetric)  
 4. **Bidding, no replay** (symmetric)  
-5. **TIOLI, asymmetric fast‑sync firm 0** – firm **0** uses online updates (no replay, mini‑batch=1) and **forces target‑net sync every iteration**; others use standard replay/sync.  
+5. **TIOLI, asymmetric fast‑sync firm 0** – firm **0** uses online updates (no replay, mini‑batch=1) and **forces target‑net sync every iteration**; others use replay/sync.  
 6. **Bidding, asymmetric fast‑sync firm 0** – as in 5, but bidding.  
 7. **TIOLI, asymmetric fast‑sync firm 1** – firm **1** is the fast‑sync/online learner.  
 8. **Bidding, asymmetric fast‑sync firm 1** – as in 7, but bidding.
@@ -139,7 +139,7 @@ python Model.py --set_simulation_scenario 5
 
 ## Reproducibility tips
 
-- Set a fixed random seed (flag may exist in your `Model.py`).
+- Set a fixed random seed.
 - Keep the wage grid and environment parameters constant while comparing models.
 - For DQN sensitivity checks: vary replay size, target‑sync frequency, and learning rate.
 
